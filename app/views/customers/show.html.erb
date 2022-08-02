@@ -1,0 +1,9 @@
+<h1> <%= @customer.name %> Show Page</h1>
+<h3>Items</h3>
+<% @customer.items.each_with_index do |item, index|  %>
+<div id="items<%= index %>">
+<%= item.name  %>
+</div>
+<% end %>
+<p>Supermarket</p>
+<%= @customer.supermarket.name %>

@@ -1,0 +1,10 @@
+<h1> <%= @customer.name %> Show Page</h1>
+<h3>Items</h3>
+<% @customer.items.each_with_index do |item, index|  %>
+<div id="items<%= index %>">
+<%= item.name  %>
+</div>
+<% end %>
+<h3>Total Price: <%= number_to_currency(@customer.total_price.fdiv(100)) %> 
+<p>Supermarket</p>
+<%= @customer.supermarket.name %>

@@ -48,6 +48,7 @@ RSpec.describe 'supermarket items index page' do
       within "#items3" do
         expect(page).to have_content("Onions")
         expect(page).to_not have_content("Potatoes")
+        expect(page).to_not have_content("King Soopers")
       end
     end
   end

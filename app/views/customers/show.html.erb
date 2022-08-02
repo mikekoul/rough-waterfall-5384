@@ -5,5 +5,6 @@
 <%= item.name  %>
 </div>
 <% end %>
+<h3>Total Price: <%= number_to_currency(@customer.total_price.fdiv(100)) %> 
 <p>Supermarket</p>
 <%= @customer.supermarket.name %>

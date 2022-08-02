@@ -21,5 +21,16 @@ RSpec.describe 'supermarket show page' do
       expect(page).to have_link("All Items")
       expect(page).to_not have_content("King Soopers")
     end
+
+    it 'click link and redirected to the supermarkets item index page' do
+      ideal = Supermarket.create!(name: 'Ideal Market', location: 'Capitol Hill')
+      soopers = Supermarket.create!(name: 'King Soopers', location: 'Aurora')
+
+      visit "/supermarkets/#{ideal.id}"
+
+      click_link ("All Items")
+
+      expect(current_path).to eq("/supermarkets/#{ideal.id}/items")
+    end
   end
 end
